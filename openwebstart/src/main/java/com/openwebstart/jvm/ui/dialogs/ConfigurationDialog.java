@@ -254,7 +254,7 @@ public class ConfigurationDialog extends ModalDialog {
         }
 
         private String displayStringForVendor(Vendor vendor) {
-            if (Objects.equals(vendor, Vendor.ANY_VENDOR)) {
+            if (Objects.isNull(vendor) || Objects.equals(vendor, Vendor.ANY_VENDOR)) {
                 return ANY_VENDOR_DISPLAY_NAME;
             }
             return vendor.getName();
